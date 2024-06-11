@@ -5,6 +5,7 @@ import './Gallery.css';
 function MyComponent() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedCat, setSelectedCat] = useState(null);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
@@ -13,6 +14,9 @@ function MyComponent() {
     const fetchData = async () => {
       try {
         let url = 'https://freetestapi.com/api/v1/cats';
+        if (searchTerm) {
+          url += `?search=${encodeURIComponent(searchTerm)}`;
+        }
      
         const response = await axios.get(url);
         const sortedData = response.data.sort((a, b) => a.name.localeCompare(b.name));
@@ -23,7 +27,7 @@ function MyComponent() {
     };
 
     fetchData();
-  });
+  }, [searchTerm]);
 
   const showDetails = (pet) => {
     setSelectedCat(pet);
@@ -39,6 +43,12 @@ function MyComponent() {
   return (
     <div className="gallery">
       <h1>Cats Gallery</h1>
+      <input
+        type="text"
+        placeholder={`Search by cat name...`}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <div className="gallery-items">
         {data.map(cat => (
           <div key={cat.id} className="gallery-item" onClick={() => showDetails(cat)}>

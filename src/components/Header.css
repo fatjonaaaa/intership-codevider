@@ -56,7 +56,6 @@
       color: #000000;
       position: relative;
       text-transform: uppercase;
-      opacity: 1 !important;
      
   }
   
@@ -67,6 +66,8 @@
   
   .dropdown:hover .dropdown-content {
     display: block;
+    padding: 20px;
+    position: fixed;
   }
   
   

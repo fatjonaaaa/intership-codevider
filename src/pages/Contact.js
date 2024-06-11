@@ -13,14 +13,14 @@ const ContactUs = () => {
         <strong>Email:</strong> info@petexpo.com<br />
         <strong>Phone:</strong> (123) 456-7890
       </p>
-      
+     
       <h2>Our Address</h2>
       <p>
         Pet Expo Headquarters<br />
         1234 Pet Street<br />
         Pet City, PC 56789
       </p>
-
+      
       <h2>Business Hours</h2>
       <p>
         <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM<br />

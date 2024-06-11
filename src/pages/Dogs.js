@@ -42,6 +42,12 @@ function MyComponent() {
   return (
     <div className="gallery">
       <h1>Dogs Gallery</h1>
+      <input
+        type="text"
+        placeholder={`Search by dog name...`}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <div className="gallery-items">
         {data.map(dog => (
           <div key={dog.id} className="gallery-item" onClick={() => showDetails(dog)}>

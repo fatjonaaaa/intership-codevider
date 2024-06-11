@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.css';
 
 
@@ -9,12 +9,12 @@ const Header = () => {
       <div className="container">
         <div className="logo">
         <NavLink to="/home">
-            <span className='logo-image'><img src="./pngwing.png" width="70" height="70"/></span>
+            <span className='logo-image'><img src="./pngwing.png" alt="/" width="70" height="70"/></span>
           </NavLink>  
             </div>
         <nav className="navbar">
           <ul>
-          <li><NavLink to="/home">Home</NavLink></li>
+          <li><NavLink to="/home" activeClassName="active" exact className="active" >Home</NavLink></li>
             <li className="dropdown">
               <NavLink to="/gallery">Pet Types</NavLink>
               <div className="dropdown-content">

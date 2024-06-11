@@ -22,7 +22,7 @@ function App() {
       <Header />
       <main className="main-content">
       <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route exact path="/home" element={<Home />} />
         <Route path="/dogs" element={<Dogs />} />
         <Route path="/cats" element={<Cats />} />
         <Route path="/birds" element={<Birds />} />
